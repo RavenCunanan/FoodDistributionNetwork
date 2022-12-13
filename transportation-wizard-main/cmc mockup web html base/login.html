@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="images/CMC.png">
+    <meta name="viewport" content='with=device-width,initial-scale=1.0'>
+    <title>Food Distribution Network</title>
+    <link rel="stylesheet" href="styleLogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;700;800&family=Roboto+Slab:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+
+<!----clickable preview line 22-23 subject to change -->
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="images/logo.webp"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="map.html">Map</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        
+    <div class="text-box">
+        <h1>Login</h1>
+
+    </div>    
+    </section>
+
+
+<section class="log-con">
+    <div class="wrapper">
+        <header>Login</header>
+        <form action="#">
+          <div class="field email">
+            <div class="input-area">
+              <input type="text" placeholder="Email Address">
+              <i class="icon fas fa-envelope"></i>
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+            </div>
+            <div class="error error-txt">Email can't be blank</div>
+          </div>
+          <div class="field password">
+            <div class="input-area">
+              <input type="password" placeholder="Password">
+              <i class="icon fas fa-lock"></i>
+              <i class="error error-icon fas fa-exclamation-circle"></i>
+            </div>
+            <div class="error error-txt">Password can't be blank</div>
+          </div>
+          <div class="pass-txt"><a href="#">Forgot password?</a></div>
+          <input type="submit" value="Login">
+        </form>
+        <div class="sign-txt">Not yet register? <a href="registration.html">Signup now</a></div>
+      </div>
+
+
+</section>
+
+
+
+<!-----footer---->
+<section class="footer">
+    <h4>About This Project</h4>
+    <p>California Mobility Center wants to transport excess food from hotels, restuarants and other places with excess food to food pantries for those who need it while also keeping the food safe.</p>
+    <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+
+    </div>
+</section>
+
+
+    <script>
+            var vContinue = document.getElementById("continue"),
+            vLogin = document.getElementById("login");
+
+        vContinue.addEventListener("click", function() {
+        document.body.className += ' denied';
+        }, false);
+
+        var pfx = ["webkit", "moz", "MS", "o", ""];
+        function PrefixedEvent(element, type, callback) {
+        for (var p = 0; p < pfx.length; p++) {
+            if (!pfx[p]) type = type.toLowerCase();
+            element.addEventListener(pfx[p]+type, callback, false);
+        }
+        }
+
+        PrefixedEvent(vLogin, "AnimationEnd", function () {
+        document.body.className = '';
+        });
+    </script>
+
+<!---js to toggle menu-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right= "-200px";
+        }
+    </script>
+
+
+</body>
+
+
+</html>
+
+<script src="./scripts/formscript.js"></script>
+<script src="./scripts/loginscript.js"></script>
