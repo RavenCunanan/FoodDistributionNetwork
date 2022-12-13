@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <title></title>
+
+    <link rel="stylesheet" href="styleGM.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<h1>Google Maps</h1>
+
+<div id="floating-panel">
+    <div>
+        <div>
+            <input type="text" style="height: 25px; width: 700px" id="origin" placeholder="Origin">
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <input type="text" style="height: 25px; width: 700px" id="destinations" placeholder="Destination">
+            <button type="button" onclick="addWayPoint()" class="btn btn-info btn-lg" id="addPoint">Add Waypoint</button>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <!--
+            <input type="text" style="height: 25px; width: 500px" id="waypoint" placeholder="Add Waypoints">
+            <button type="button" onclick="addWayPoint()" class="btn btn-info btn-lg" id="addPoint">Add Waypoint</button>
+            -->
+
+            <div>
+                <div>
+                    <label>Input time when the food made.</label>
+                    <input id="setTime" type="time" name="appt-time"/>
+                    <button id="setBtnTime" onclick="addTime()">Add</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="file_input_container">
+                    <label> Input a .csv/.xlsx File</label>
+                    <input type = "file" id = "uploadfile" accept = ".csv, .xlsx" title = "Only Accepts .csv/.xlsx">
+                    <button id = "fileConfirm">Submit</button>
+                </div>
+            </div>
+
+                <div class = "popup" id="popup-1">
+                    <div class="content">
+                        <div class = "close-btn" onclick="listPoints()">&times;</div>
+                        <div class = "list-content" id = "list-content">
+                            <ul class="listings" id="listings">
+                                
+                            </ul>
+                        </div>
+                </div>
+
+                <button type="button" onclick="listPoints()">List Waypoints</button>
+        </div>
+    </div>
+
+
+    <div>
+        <div>
+            <button type="button" onclick="calcRoute()" class="btn btn-info btn-lg" id="serachButton">Calculate</button>
+        </div>
+    </div>
+
+    <div id="output">
+
+    </div>
+</div> 
+
+
+<div id="map"></div>
+
+<script src="app.js"></script>
+<script src="parseGM.js"></script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=(INSERT KEY)&libraries=places&callback=initMap"></script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="CMC.png">
+        <meta charset="utf-8" lang="en">
+        <meta http-equiv="X-UA-Compatible">
+        <title>Food Distribution Network</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" >
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="index.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="nav">
+                <img src="https://static.wixstatic.com/media/e57d83_577bd49335bb4def89fc7c5fb433f116~mv2.png/v1/fill/w_292,h_114,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CMC-logo-horizontal%20(2)%20copy.png" alt="CMC horizontal logo - white" style="width:127.5px;height:50px;object-fit:cover" srcset="https://static.wixstatic.com/media/e57d83_577bd49335bb4def89fc7c5fb433f116~mv2.png/v1/fill/w_292,h_114,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CMC-logo-horizontal%20(2)%20copy.png 1x, https://static.wixstatic.com/media/e57d83_577bd49335bb4def89fc7c5fb433f116~mv2.png/v1/fill/w_584,h_228,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CMC-logo-horizontal%20(2)%20copy.png 2x" fetchpriority="high">
+                <p>Food Distribution Network</p>
+            </div>
+
+            <div class="nav_containers">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <span>&nbsp Dark Mode</span>
+            </div>
+
+
+            <div class="input_side">
+                <div class="input_container">
+                    <form id="inputs" action="">
+                        <label for="food_type_input">Food Type</label>
+                        <input id="food_type_input" type="text" />
+                        <label for="food_group_input">Food Group</label>
+                        <input id="food_group_input" type="text"  />
+                        <label for="perishable_input">Perishable</label>
+                        <select id="perishable_input" style="width:100%; height:38px;"> <!-- style="width: 212px; height: 42px;" -->
+                            <option>Perishable</option>
+                            <option>Perishable Refrigerated</option>
+                            <option>Non-Perishable</option>
+                        </select>
+                        <label for="spoil_date_input">Spoil Date</label>
+                        <input id="spoil_date_input" type="date" />
+                        <label for="food_quantity_input">Food Quantity in lbs</label>
+                        <input id="food_quantity_input" type="number" />
+                    <!--<label for="food_volume_input">Food Quantity (volume?)</label>
+                        <input id="food_volume_input" type="number"/> -->
+                        <label for="market_value_input">Market Value</label>
+                        <input id="market_value_input" type="number" />
+                        <fieldset type="checklist">
+                            <legend>Alergens:</legend>
+                            <input type="checkbox" id="milk_allergen_input" name="milk">
+                            <label for="milk_allergen_input">Milk</label>                  
+                            <input type="checkbox" id="eggs_allergen_input" name="eggs">
+                            <label for="eggs_allergen_input">Eggs</label>                  
+                            <input type="checkbox" id="tree_nuts_allergen_input" name="tree nuts">
+                            <label for="tree_nuts_allergen_input">Tree Nuts</label>                    
+                            <input type="checkbox" id="peanuts_allergen_input" name="peanuts">
+                            <label for="peanuts_allergen_input">Peanuts</label>                     
+                            <input type="checkbox" id="fish_allergen_input" name="fish">
+                            <label for="fish_allergen_input">Fish</label>                     
+                            <input type="checkbox" id="shellfish_allergen_input" name="shellfish">
+                            <label for="shellfish_allergen_input">Shellfish</label>
+                            <input type="checkbox" id="wheat_allergen_input" name="wheat">
+                            <label for="wheat_allergen_input">Wheat</label>
+                            <input type="checkbox" id="soybeans_allergen_input" name="soybeans">
+                            <label for="soybeans_allergen_input">Soybeans</label>      
+                        </fieldset>  
+                        <!-- START GOOGLE MAPS INPUTS -->
+                        <!-- @LeeXiong625 -->
+                        <label for="gmap_input_0">Starting Location</label>
+                        <input type="text" id="gmap_input_0" />
+                        <label for="end_input">Final Location</label>
+                        <input id="end_input" type="text" />
+                        <!--  END GOOGLE MAPS INPUTS  -->
+                        <div>
+                            <button class="submit" style="width:45%; color:black"> Submit</button>
+                            <button class="reset" style="width: 45%; float:right"> Reset</button>
+                        </div>
+                    </form>
+                    <div class="file_input_container">
+                        <label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Or input a .csv/.xlsx</label><br>
+                        <input style="padding-left: 40px;" type="file" accept=".csv, .xlsx" />
+                    </div>
+                </div>
+            </div>
+            <div class="map-side" style="margin-top: 0;">
+                <!-- google-map><-->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12479.679098305178!2d-121.41767365927734!3d38.558662148056776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada8d31c6f4db%3A0x763ddc32823f5b82!2sCalifornia%20State%20University%2C%20Sacramento!5e0!3m2!1sen!2sus!4v1664753237865!5m2!1sen!2sus"
+                    style="border:none; width: 49vw;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+            <hr style="width: 100%; margin: 15px; margin-top: 50px;">
+            <div style="width: 100%;">
+                <div id="footer-container">
+                    <img src="https://static.wixstatic.com/media/10af82_1cc9359260bb4cbf84da2c9f3a683f5a~mv2.png/v1/fill/w_217,h_323,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/CMC%20logo-stacked.png" alt="CMC Logo Stacked - Full Color" style="width: 217px; height: 323px; object-fit: cover; object-position: 50% 50%; display: block; margin: auto;">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="./scripts/ui.js"></script>
+<script src="./scripts/FileInputs.js"></script>
